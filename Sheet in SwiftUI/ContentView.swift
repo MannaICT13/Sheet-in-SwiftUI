@@ -12,9 +12,25 @@ import SwiftUI
 
 struct ContentView2 : View{
     
+    @Environment (\.presentationMode) var presentationMode
+   
+    
     var body : some View{
+      
+        VStack{
+            
+            Text("This is ContentView2")
+            Button(action: {
+                
+                self.presentationMode.wrappedValue.dismiss()
+                
+            }, label: {
+                Text("Back")
+                
+            })
+            
+        }
         
-        Text("Hello World")
     }
 }
 
