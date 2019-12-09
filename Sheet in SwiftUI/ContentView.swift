@@ -13,14 +13,28 @@ import SwiftUI
 struct ContentView2 : View{
     
     var body : some View{
+        
         Text("Hello World")
     }
 }
 
 
 struct ContentView: View {
+    
+    @State var isShowingSheet : Bool = false
+    
     var body: some View {
-        Text("Hello World")
+        
+        Button(action: {
+            
+            self.isShowingSheet.toggle()
+        }, label: {
+            
+            Text("Click Here")
+            }).sheet(isPresented: $isShowingSheet, content: {
+                
+                ContentView2()
+            })
     }
 }
 
